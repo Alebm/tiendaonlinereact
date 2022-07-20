@@ -1,0 +1,12 @@
+
+.button{
+    background-color: transparent;
+    padding: 8px;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 4px;
+}
