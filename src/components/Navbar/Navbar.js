@@ -1,6 +1,7 @@
 import './Navbar.css'
 import '../button/Button.js'
 import Button from '../button/Button.js';
+import CartWidget from '../cart/CartWidget';
 
 const Navbar = () => {
 
@@ -25,6 +26,7 @@ const Navbar = () => {
                 <div>
                     <Button click={handleClick} label='Collections' color='yellow' />
                 </div>
+                <CartWidget/>
             </nav>
     )
 }

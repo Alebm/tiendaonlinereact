@@ -1,7 +1,7 @@
 import './Button.css'
 
-const Button = (props) =>{
-    return <button onClick={props.click} className='button' style={{color: props.color}} >{props.label}</button>
+const Button = ({click, color, label}) =>{
+    return <button onClick={click} className='button' style={{color: color}} >{label}</button>
 }
 
 export default Button;
