@@ -18,13 +18,13 @@ const Navbar = () => {
                     <p>Shop OnLine</p>
                 </div>
                 <div>
-                    <Button click={handleClick} label='Outlets' color = 'blue' />
+                    <Button click={handleClick} label='Outlets' color = '#F6F6F6' />
                 </div>
                 <div>
-                    <Button click={handleClick} label='News' color='red'/>
+                    <Button click={handleClick} label='News' color= '#F6F6F6'/>
                 </div>
                 <div>
-                    <Button click={handleClick} label='Collections' color='yellow' />
+                    <Button click={handleClick} label='Collections' color='#F6F6F6' />
                 </div>
                 <CartWidget/>
             </nav>
