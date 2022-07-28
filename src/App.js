@@ -17,10 +17,11 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <ItemListContainer greeting={'primer item del list'} />
-      <button onClick={() => setShow(!show) }>Mostrar/Ocultar</button>
-      {show === true ? <Counter stock={10} onAdd = {handleClick} /> : null}
-
+      <div className='page'>
+        <ItemListContainer greeting={'primer item del list'} />
+        <button onClick={() => setShow(!show) }>Mostrar/Ocultar</button>
+        {show === true ? <Counter stock={10} onAdd = {handleClick} /> : null}
+      </div>
     </div>
   );
 }

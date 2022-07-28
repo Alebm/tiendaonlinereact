@@ -1,0 +1,19 @@
+
+
+.Products{
+    list-style: none;
+    height: 300px;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 8px;
+    display: inline-block;
+}
+
+.imgProducts{
+    width: 200px;
+    height: 150px;
+    object-fit: fill;
+    border-radius: 8px;
+}
