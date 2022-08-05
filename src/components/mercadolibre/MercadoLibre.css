@@ -1,0 +1,42 @@
+.loader {
+    margin-top: 32px;
+    width: 48px;
+    height: 48px;
+    border: 5px solid;
+    border-color: #0078AA transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.Products{
+    list-style: none;
+    height: 300px;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 8px;
+    display: inline-block;
+}
+
+.imgProducts{
+    width: 200px;
+    height: 150px;
+    object-fit: scale-down;
+    border-radius: 8px;
+}
+
+.form{
+    margin: 24px;
+}

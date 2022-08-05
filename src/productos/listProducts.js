@@ -1,6 +1,6 @@
 const listProducts = [
   {
-    Id: 1,
+    id: 1,
     Modelo: "300",
     Marca: "Chrysler",
     Año: 2010,
@@ -10,7 +10,7 @@ const listProducts = [
     img: "https://acnews.blob.core.windows.net/imgnews/extralarge/NAZ_509acbf3e75342a081f05102c15bc5a9.jpg",
   },
   {
-    Id: 2,
+    id: 2,
     Modelo: "Tacoma",
     Marca: "Toyota",
     Año: 2002,
@@ -20,7 +20,7 @@ const listProducts = [
     img: "https://www.elcarrocolombiano.com/wp-content/uploads/2020/01/20200107-TOYOTA-PRODUCCION-DE-TACOMA-EN-GUANAJUATO-MEXICO-01.jpg",
   },
   {
-    Id: 3,
+    id: 3,
     Modelo: "650",
     Marca: "BMW",
     Año: 2006,
@@ -30,7 +30,7 @@ const listProducts = [
     img: "https://imagenes.km77.com/fotos/bbtcontent/clippingnew/KM7KPH20100120_0319/full.jpg",
   },
   {
-    Id: 4,
+    id: 4,
     Modelo: "E250",
     Marca: "Ford",
     Año: 2007,
@@ -40,7 +40,7 @@ const listProducts = [
     img: "https://www.manualesdetodo.net/wp-content/uploads/2021/05/e-2502010-r-1.jpg",
   },
   {
-    Id: 5,
+    id: 5,
     Modelo: "Park Avenue",
     Marca: "Buick",
     Año: 1992,
@@ -58,3 +58,12 @@ export const getProducts = () => {
     }, 500);
   });
 };
+
+export const getDetailsByid = (id) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(listProducts.find(prod => prod.id === id));
+    }, 500);
+  });
+};
+
