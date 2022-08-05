@@ -17,3 +17,21 @@
     object-fit: fill;
     border-radius: 8px;
 }
+
+.link{
+    background-color: transparent;
+    padding: 8px;
+    text-decoration: none;
+    color: #0078AA;
+    font-weight: bold;
+}
+
+.link:hover{
+    cursor: pointer;
+    background-color: #F2DF3A;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #0078AA;
+    font-weight: bold;
+}
