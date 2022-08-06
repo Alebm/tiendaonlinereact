@@ -26,8 +26,8 @@ function App() {
         <div className="page">
           <Routes>
             <Route path="/" element={<ItemListContainer listTitle={"Lista de Autos"}/>}/>
+            <Route path="/category/:categoryId" element={<ItemListContainer listTitle={'Lista Filtrada'} />} />
             <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
-            <Route path="/category" element={<d/>} />
             {/* <Route path="*" element={<h1> 404 Not Found </h1>}/> */}
           </Routes>
           <div>

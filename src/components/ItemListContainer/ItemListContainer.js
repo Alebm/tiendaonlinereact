@@ -1,21 +1,31 @@
 import "./ItemListContainer.css";
-import { getProducts } from "../../productos/listProducts";
+import { getProducts, getProductsByCategory } from "../../productos/listProducts";
 import { useState, useEffect } from "react";
 
+import { useParams } from "react-router-dom";
 
 import ItemList from "../itemList/ItemList";
-
-
 
 
 const ItemListContainer = ({ listTitle }) => {
   const [listProducts, setListProducts] = useState([]);
 
+  const { categoryId } = useParams();
+
   useEffect(() => {
-    getProducts().then((listProducts) => {
-      setListProducts(listProducts);
-    });
-  }, []);
+    if(!categoryId){
+
+      getProducts().then((listProducts) => {
+        setListProducts(listProducts);
+      });
+
+    }else{
+      getProductsByCategory(categoryId).then((listProducts) => {
+        setListProducts(listProducts);
+      });
+    }
+    
+  }, [categoryId]);
 
   return (
     <div>

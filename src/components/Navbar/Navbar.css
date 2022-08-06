@@ -18,8 +18,19 @@
     color: #0078AA;
 }
 
-button{
-    border: none;
+.button{
     background-color: transparent;
-    font-weight: bolder;
+    padding: 8px;
+    text-decoration: none;
+    color: #F6F6F6;
+
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #F2DF3A;
+    padding: 8px;
+    border-radius: 4px;
+    color: #F6F6F6;
+
 }

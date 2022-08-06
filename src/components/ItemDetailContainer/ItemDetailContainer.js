@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
         getDetailsByid(productId).then(listProducts => {
             setListProducts(listProducts);
         })
-}, []);
+}, [productId]);
 
 const handleClick = (quantity) => {
     console.log(`agrego la cantidad de : ${quantity}`);

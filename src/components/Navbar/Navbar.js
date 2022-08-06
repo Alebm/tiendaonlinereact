@@ -1,14 +1,11 @@
 import "./Navbar.css";
 import "../button/Button.js";
-import Button from "../button/Button.js";
+//import Button from "../button/Button.js";
 import CartWidget from "../cart/CartWidget";
 
-const Navbar = () => {
-  const text = "hice click";
+import { Link } from "react-router-dom";
 
-  const handleClick = () => {
-    console.log(text);
-  };
+const Navbar = () => {
 
   return (
     <nav className="Navbar">
@@ -16,13 +13,13 @@ const Navbar = () => {
         <p className="ParNav" >Shop OnLine</p>
       </div>
       <div>
-        <Button click={handleClick} label="Outlets" color="#F6F6F6" />
+        <Link className="button" to={'/category/Outlets'}>Outlets</Link>
       </div>
       <div>
-        <Button click={handleClick} label="News" color="#F6F6F6" />
+        <Link className="button" to={'/category/News'}>News</Link>
       </div>
       <div>
-        <Button click={handleClick} label="Collections" color="#F6F6F6" />
+        <Link className="button" to={'/category/Collections'}>Collections</Link>
       </div>
       <CartWidget />
     </nav>
