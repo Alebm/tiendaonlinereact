@@ -4,11 +4,12 @@
     list-style: none;
     height: 300px;
     width: 200px;
-    border: solid 2px black;
+    border: solid 2px #0078AA;
     border-radius: 20px;
     padding: 8px;
     margin: 8px;
     display: inline-block;
+    background-color: #F6F6F6;
 }
 
 .imgProducts{
@@ -16,11 +17,13 @@
     height: 150px;
     object-fit: fill;
     border-radius: 8px;
+    margin-bottom: 16px;
+    
 }
 
 .link{
     background-color: transparent;
-    padding: 8px;
+    padding: 4px;
     text-decoration: none;
     color: #0078AA;
     font-weight: bold;
@@ -34,4 +37,8 @@
     text-decoration: none;
     color: #0078AA;
     font-weight: bold;
+}
+
+h4{
+    margin: 16px;
 }
