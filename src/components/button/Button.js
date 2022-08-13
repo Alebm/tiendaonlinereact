@@ -1,8 +1,8 @@
 import "./Button.css";
 
-const Button = ({ disable, click, color, label }) => {
+const Button = ({ disable, click, label }) => {
   return (
-    <button disabled={disable}  onClick={click} className="button" style={{ color: color }}>
+    <button disabled={disable}  onClick={click} className="button" >
       {label}
     </button>
   );

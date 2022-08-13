@@ -1,7 +1,10 @@
 
 .button{
-    background-color: transparent;
+    height: 40px;
+    background-color: #0078AA;
     padding: 8px;
+    margin: 8px;
+    border-radius: 4px;
 
 }
 
@@ -9,5 +12,6 @@
     cursor: pointer;
     background-color: #F2DF3A;
     padding: 8px;
+    margin: 8px;
     border-radius: 4px;
 }

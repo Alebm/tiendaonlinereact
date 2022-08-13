@@ -5,6 +5,9 @@ import { getDetailsByid } from "../../productos/listProducts"
 import ItemDetail from "../itemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../services/firebase";
+
 const ItemDetailContainer = () => {
 
     const [listProducts, setListProducts] = useState([]);
@@ -14,9 +17,17 @@ const ItemDetailContainer = () => {
     const { productId } = useParams();
 
     useEffect(() => {
-        getDetailsByid(productId).then(listProducts => {
-            setListProducts(listProducts);
+
+        getDoc(doc(db, 'listProducts', productId )).then( Response =>{
+            const data = Response.data()
+            const productConvert = { id: Response.id, ...data }
+            setListProducts(productConvert)
+        }).catch( error => {
+            console.log(error)
         })
+        /* getDetailsByid(productId).then(listProducts => {
+            setListProducts(listProducts);
+        }) */
 }, [productId]);
 
 const handleClick = (quantity) => {
@@ -28,7 +39,7 @@ const handleClick = (quantity) => {
             <h1>Detalles</h1>
             <ItemDetail {...listProducts} />
             {show === true ? <Counter stock={listProducts.Stock} onAdd={handleClick} /> : null}
-            <button onClick={() => setShow(!show)}>Mostrar/Ocultar</button>
+            {/* <button onClick={() => setShow(!show)}>Mostrar/Ocultar</button> */}
         </div>
     )
 }

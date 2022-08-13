@@ -1,4 +1,5 @@
 import Button from "../button/Button";
+import "./counter.css"
 import { useState } from "react";
 
 const Counter = ({ initial, stock, onAdd }) => {
@@ -19,11 +20,14 @@ const Counter = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div>
-      <h1>{count}</h1>
+    <div className="counter" >
       <Button disable={count === initial} click={decrement} label={"-"}  />
+      <h1>{count}</h1>
       <Button disable={count === stock} click={increment} label={"+"} />
       <Button disable={count === 0 ? true : null} click={() => onAdd(count)} label={"Agregar al 🛒"} />
+      <div>
+        <Button label={"Finalizar compra"} />
+      </div>
     </div>
   );
 };
