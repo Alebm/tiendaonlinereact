@@ -8,6 +8,7 @@ const Counter = ({ initial, stock, onAdd }) => {
 
   const [count, setCount] = useState(initial);
 
+
   const increment = () => {
     if (count < stock) {
       setCount(count + 1);
@@ -17,7 +18,7 @@ const Counter = ({ initial, stock, onAdd }) => {
     if (count > 1) {
       setCount(count - 1);
     }
-  };
+  }
 
   return (
     <div className="counter" >

@@ -4,3 +4,9 @@
     height: auto;
     border-radius: 16px;
 }
+
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
