@@ -1,7 +1,8 @@
 import "./ItemDetail.css";
 import Button from "../button/Button";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
 
 
 const ButtonCount = ({ onAdd, Stock, initial = 1 }) => {
@@ -30,13 +31,23 @@ const ButtonCount = ({ onAdd, Stock, initial = 1 }) => {
   );
 };
 
-const ItemDetail = ({ Modelo, img, Stock }) => {
+const ItemDetail = ({ Modelo, img, Stock, Precio, id }) => {
+  const [quantity, setQuantity] = useState(0);
+
+  const { addVehicle } = useContext(CartContext);
+
+  
+  
   const handleClick = (quantity) => {
     setQuantity(quantity);
-    console.log(`agrego la cantidad de : ${quantity}`);
+    const productAdd = {
+      id, Modelo, Precio, quantity
+    }
+    
+    addVehicle(productAdd)
+    //onsole.log(`agrego la cantidad de : ${quantity}`);
   };
-
-  const [quantity, setQuantity] = useState(0);
+  
   return (
     <div>
       <h1> {Modelo} </h1>
@@ -44,7 +55,7 @@ const ItemDetail = ({ Modelo, img, Stock }) => {
       {quantity === 0 ? (
         <ButtonCount onAdd={handleClick} Stock={Stock} />
       ) : (
-        <Link to="/cart">Finalizar compra</Link>
+        <Link to='/cart'>Finalizar compra</Link>
       )}
     </div>
   );

@@ -3,9 +3,12 @@ import "../button/Button.js";
 //import Button from "../button/Button.js";
 import CartWidget from "../cart/CartWidget";
 
+
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
+  
 
   return (
     <nav className="Navbar">

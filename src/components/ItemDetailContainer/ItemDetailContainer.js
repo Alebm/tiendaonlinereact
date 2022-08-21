@@ -10,7 +10,7 @@ import { db } from "../../services/firebase";
 
 
 
-const ItemDetailContainer = ( {addItem} ) => {
+const ItemDetailContainer = ( ) => {
   const [listProducts, setListProducts] = useState([]);
 
 
@@ -40,7 +40,7 @@ const ItemDetailContainer = ( {addItem} ) => {
   return (
     <div>
       <h1>Detalles</h1>
-      <ItemDetail {...listProducts} addItem={addItem} {...listProducts.Stock} />
+      <ItemDetail {...listProducts}  {...listProducts.Stock} />
             {/* <Counter stock={listProducts.Stock} onAdd={handleClick} /> */}
     </div>
   );
