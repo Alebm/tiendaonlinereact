@@ -1,34 +1,32 @@
 import Button from "../button/Button";
 import "./counter.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Counter = ({ initial, stock, onAdd }) => {
-  //useEffect(() => {}); se utilizo para pruebas
-  initial = 1;
+const Counter = ({ initial=1, Stock , onAdd }) => {
+  const[quantity, setQuantity] =useState(initial)
 
-  const [count, setCount] = useState(initial);
 
+  useEffect(() =>{
+    setQuantity(initial)
+  },[initial])
 
   const increment = () => {
-    if (count < stock) {
-      setCount(count + 1);
+    if (quantity < Stock) {
+      setQuantity(quantity + 1);
     }
   };
   const decrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     }
   }
 
   return (
     <div className="counter" >
-      <Button disable={count === initial} click={decrement} label={"-"}  />
-      <h1>{count}</h1>
-      <Button disable={count === stock} click={increment} label={"+"} />
-      <Button disable={count === 0 ? true : null} click={() => onAdd(count)} label={"Agregar al 🛒"} />
-      <div>
-        <Button label={"Finalizar compra"} />
-      </div>
+      <Button disable={quantity === initial} click={decrement} label={"-"}  />
+      <h1>{quantity}</h1>
+      <Button disable={quantity === Stock} click={increment} label={"+"} />
+      <Button disable={quantity === 0 ? true : null} click={() => onAdd(quantity)} label={"Agregar al 🛒"} />
     </div>
   );
 };

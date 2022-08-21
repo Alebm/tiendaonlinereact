@@ -12,7 +12,7 @@ const CartWidget = () => {
 
   return (
     <Link to='/cart' >
-      <img src="/img/cart.svg" alt="10" />
+      <img src="/img/cart.svg" alt="" />
       <span>{quantity}</span>
     </Link>
   );

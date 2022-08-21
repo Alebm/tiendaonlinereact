@@ -7,8 +7,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import CartWidget from "./components/cart/CartWidget";
 import { CartContextProvider } from './context/CartContext'
+import Cart from "./components/cart/Cart";
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
               <Route path="/" element={<ItemListContainer listTitle={"Lista de Autos"}/>}/>
               <Route path="/category/:categoryId" element={<ItemListContainer listTitle={ 'Listado de' } />} />
               <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
-              <Route path="/cart" element={<CartWidget/>} />
+              <Route path="/cart" element={<Cart/>} />
               {/* <Route path="*" element={<h1> 404 Not Found </h1>}/> */}
             </Routes>
             <div>

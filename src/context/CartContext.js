@@ -37,6 +37,12 @@ export const CartContextProvider = ({ children }) => {
     setCart(removeOneVehicleInCart);
   };
 
+  const getProductQuantity = (id) => {
+    const product = cart.find((prod) => prod.id === id);
+
+    return product?.quantity;
+  };
+
   const getQuantity = () => {
     let accumulated = 0;
 
@@ -46,15 +52,27 @@ export const CartContextProvider = ({ children }) => {
     return accumulated;
   };
 
+  const getTotal = () => {
+    let accumulated = 0;
+
+    cart.forEach((prod) => {
+      accumulated += prod.quantity * prod.Precio;
+    });
+
+    return accumulated;
+  };
+
   return (
     <CartContext.Provider
       value={{
         cart,
         addVehicle,
-        getQuantity,
         isInCart,
         removeVehicle,
         clearCart,
+        getTotal,
+        getQuantity,
+        getProductQuantity,
       }}
     >
       {children}
