@@ -5,6 +5,7 @@ import Button from "../button/Button";
 
 const CartItem = ({ id, Modelo, quantity, Precio }) => {
     const { removeVehicle } = useContext(CartContext);
+    console.log(id, Modelo, quantity, Precio);
 
     const handleRemove = (id) => {
         removeVehicle(id);
@@ -30,7 +31,7 @@ const CartItem = ({ id, Modelo, quantity, Precio }) => {
                 Subtotal: ${Precio * quantity}
             </span>
         </footer>
-        <Button click={handleRemove(id)} label={'Remove'}/>
+        <Button click={() => handleRemove(id)} label={'Remove'}/>
     </article>
     )
 

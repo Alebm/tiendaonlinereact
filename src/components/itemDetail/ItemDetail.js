@@ -20,9 +20,11 @@ const ItemDetail = ({ Modelo, img, Stock, Precio, id }) => {
     
     addVehicle(productAdd)
     //onsole.log(`agrego la cantidad de : ${quantity}`);
+    console.log(productAdd);
   };
 
   const productQuantity = getProductQuantity(id);
+  console.log(productQuantity);
   
   return (
     <div>

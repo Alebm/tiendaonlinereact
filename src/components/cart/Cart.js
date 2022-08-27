@@ -7,12 +7,13 @@ import Button from '../button/Button'
 
 const Cart = () => {
     const { cart, clearCart, getQuantity, getTotal } = useContext(CartContext)
-
+    console.log(cart);
 
     const totalQuantity = getQuantity()
+    console.log(totalQuantity);
     const total = getTotal()
 
-    if(totalQuantity === 0) {
+    if(cart.length === 0) {
         return (
             <h1>No hay items en el carrito</h1>
         )
