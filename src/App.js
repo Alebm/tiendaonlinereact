@@ -9,6 +9,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext'
 import Cart from "./components/cart/Cart";
+import Checkout from "./components/checkout/Checkout";
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
               <Route path="/category/:categoryId" element={<ItemListContainer listTitle={ 'Listado de' } />} />
               <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
               <Route path="/cart" element={<Cart/>} />
-              {/* <Route path="*" element={<h1> 404 Not Found </h1>}/> */}
+              <Route path="/checkout" element={<Checkout/>}/>
+              <Route path="*" element={<h1> 404 Not Found </h1>}/>
             </Routes>
             <div>
               {/* <MercadoLibre listTitle={"Lista de Autos"} /> */}
